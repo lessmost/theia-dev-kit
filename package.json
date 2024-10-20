@@ -4,11 +4,16 @@
     "yarn": ">=1.7.0 <2",
     "node": ">=16"
   },
+  "theiaPluginsDir": "plugins",
+  "theiaPlugins": {
+    "builtin-extension-pack": "https://open-vsx.org/api/eclipse-theia/builtin-extension-pack/1.88.1/file/eclipse-theia.builtin-extension-pack-1.88.1.vsix"
+  },
   "scripts": {
+    "download:plugins": "theia download:plugins",
     "build:browser": "yarn --cwd browser-app bundle",
     "build:browser-only": "yarn --cwd browser-only-app bundle",
     "build:electron": "yarn --cwd electron-app bundle",
-    "prepare": "lerna run prepare",
+    "prepare": "yarn download:plugins && lerna run prepare",
     "postinstall": "theia check:theia-version",
     "start:browser": "yarn --cwd browser-app start",
     "start:browser-only": "yarn --cwd browser-only-app start",
