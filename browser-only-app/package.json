@@ -10,20 +10,31 @@
     "@theia/messages": "latest",
     "@theia/monaco": "latest",
     "@theia/navigator": "latest",
+    "@theia/plugin-ext": "latest",
     "@theia/plugin-ext-vscode": "latest",
     "@theia/preferences": "latest",
     "@theia/process": "latest",
     "@theia/terminal": "latest",
     "@theia/workspace": "latest",
+    "@theia/userstorage": "latest",
+    "terminal": "0.0.0",
+    "plugin-ext": "0.0.0",
     "hello-world": "0.0.0"
   },
   "devDependencies": {
     "@theia/cli": "latest"
   },
   "scripts": {
-    "bundle": "yarn rebuild && theia build --mode development",
+    "copy-plugins": "run-p copy-plugins:*",
+    "copy-plugins:vscode.sql": "mkdir -p lib/frontend/hostedPlugin/vscode_sql && cp -r ../plugins/vscode.sql/extension/* lib/frontend/hostedPlugin/vscode_sql/",
+    "copy-plugins:vscode.javascript": "mkdir -p lib/frontend/hostedPlugin/vscode_javascript && cp -r ../plugins/vscode.javascript/extension/* lib/frontend/hostedPlugin/vscode_javascript/",
+    "copy-plugins:vscode.typescript": "mkdir -p lib/frontend/hostedPlugin/vscode_typescript && cp -r ../plugins/vscode.typescript/extension/* lib/frontend/hostedPlugin/vscode_typescript/",
+    "copy-plugins:vscode.python": "mkdir -p lib/frontend/hostedPlugin/vscode_python && cp -r ../plugins/vscode.python/extension/* lib/frontend/hostedPlugin/vscode_python/",
+    "copy-plugins:vscode.json-language-features": "mkdir -p lib/frontend/hostedPlugin/vscode_json_language_features && cp -r ../plugins/vscode.json-language-features/extension/* lib/frontend/hostedPlugin/vscode_json_language_features/",
+    "copy-plugins:vscode.typescript-language-features": "mkdir -p lib/frontend/hostedPlugin/vscode_typescript_language_features && cp -r ../plugins/vscode.typescript-language-features/extension/* lib/frontend/hostedPlugin/vscode_typescript_language_features",
+    "bundle": "yarn rebuild && theia build --mode development && yarn copy-plugins",
     "rebuild": "theia rebuild:browser --cacheRoot ..",
-    "start": "theia start",
+    "start": "theia start --plugins=local-dir:../plugins",
     "watch": "yarn rebuild && theia build --watch --mode development"
   },
   "theia": {

@@ -18,15 +18,16 @@
     "start:browser": "yarn --cwd browser-app start",
     "start:browser-only": "yarn --cwd browser-only-app start",
     "start:electron": "yarn --cwd electron-app start",
-    "watch:browser": "lerna run --parallel watch --ignore electron-app",
-    "watch:browser-only": "lerna run --parallel watch --ignore electron-app",
+    "watch:browser": "lerna run --parallel watch --ignore electron-app --ignore browser-only-app",
+    "watch:browser-only": "lerna run --parallel watch --ignore electron-app --ignore browser-app",
     "watch:electron": "lerna run --parallel watch --ignore browser-app"
   },
   "devDependencies": {
-    "lerna": "2.4.0"
+    "lerna": "2.4.0",
+    "npm-run-all": "^4.1.5"
   },
   "workspaces": [
-    "hello-world",
+    "extensions/*",
     "browser-app",
     "electron-app",
     "browser-only-app"

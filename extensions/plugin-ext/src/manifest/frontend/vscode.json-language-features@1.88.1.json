@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "host": "main",
+    "model": {
+      "packagePath": "/Users/zqlu/Sources/eclipse-theia/theia-dev-kit/plugins/vscode.json-language-features/extension",
+      "packageUri": "file:///Users/zqlu/Sources/eclipse-theia/theia-dev-kit/plugins/vscode.json-language-features/extension",
+      "id": "vscode.json-language-features",
+      "name": "json-language-features",
+      "publisher": "vscode",
+      "version": "1.88.1",
+      "displayName": "JSON Language Features (built-in)",
+      "description": "Provides rich language support for JSON files.",
+      "engine": {
+        "type": "vscode",
+        "version": "^1.77.0"
+      },
+      "entryPoint": {
+        "frontend": "client/dist/browser/jsonClientMain.js"
+      },
+      "iconUrl": "hostedPlugin/vscode_json_language_features/icons%2Fjson.png",
+      "readmeUrl": "hostedPlugin/vscode_json_language_features/.%2FREADME.md",
+      "licenseUrl": "hostedPlugin/vscode_json_language_features/.%2FLICENSE"
+    },
+    "lifecycle": {
+      "startMethod": "activate",
+      "stopMethod": "deactivate",
+      "frontendModuleName": "vscode_json_language_features",
+      "frontendInitPath": "plugin-vscode-init-fe.js",
+      "backendInitPath": "/Users/zqlu/Sources/eclipse-theia/theia-dev-kit/browser-app/lib/backend/plugin-vscode-init"
+    },
+    "outOfSync": false,
+    "isUnderDevelopment": false
+  },
+  "type": 0,
+  "contributes": {
+    "activationEvents": [
+      "onLanguage:json",
+      "onLanguage:jsonc",
+      "onLanguage:snippets",
+      "onCommand:json.clearCache",
+      "onCommand:json.sort"
+    ],
+    "configuration": [
+      {
+        "id": "json",
+        "order": 20,
+        "type": "object",
+        "title": "JSON",
+        "properties": {
+          "json.schemas": {
+            "type": "array",
+            "scope": "resource",
+            "description": "%json.schemas.desc%",
+            "items": {
+              "type": "object",
+              "default": {
+                "fileMatch": ["/myfile"],
+                "url": "schemaURL"
+              },
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "default": "/user.schema.json",
+                  "description": "%json.schemas.url.desc%"
+                },
+                "fileMatch": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "default": "MyFile.json",
+                    "description": "%json.schemas.fileMatch.item.desc%"
+                  },
+                  "minItems": 1,
+                  "description": "%json.schemas.fileMatch.desc%"
+                },
+                "schema": {
+                  "$ref": "http://json-schema.org/draft-07/schema#",
+                  "description": "%json.schemas.schema.desc%"
+                }
+              }
+            },
+            "owner": "JSON"
+          },
+          "json.validate.enable": {
+            "type": "boolean",
+            "scope": "window",
+            "default": true,
+            "description": "%json.validate.enable.desc%",
+            "owner": "JSON"
+          },
+          "json.format.enable": {
+            "type": "boolean",
+            "scope": "window",
+            "default": true,
+            "description": "%json.format.enable.desc%",
+            "owner": "JSON"
+          },
+          "json.format.keepLines": {
+            "type": "boolean",
+            "scope": "window",
+            "default": false,
+            "description": "%json.format.keepLines.desc%",
+            "owner": "JSON"
+          },
+          "json.trace.server": {
+            "type": "string",
+            "scope": "window",
+            "enum": ["off", "messages", "verbose"],
+            "default": "off",
+            "description": "%json.tracing.desc%",
+            "owner": "JSON"
+          },
+          "json.colorDecorators.enable": {
+            "type": "boolean",
+            "scope": "window",
+            "default": true,
+            "description": "%json.colorDecorators.enable.desc%",
+            "deprecationMessage": "%json.colorDecorators.enable.deprecationMessage%",
+            "owner": "JSON"
+          },
+          "json.maxItemsComputed": {
+            "type": "number",
+            "default": 5000,
+            "description": "%json.maxItemsComputed.desc%",
+            "owner": "JSON"
+          },
+          "json.schemaDownload.enable": {
+            "type": "boolean",
+            "default": true,
+            "description": "%json.enableSchemaDownload.desc%",
+            "tags": ["usesOnlineServices"],
+            "owner": "JSON"
+          }
+        }
+      }
+    ],
+    "configurationDefaults": {
+      "[json]": {
+        "editor.quickSuggestions": {
+          "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+      },
+      "[jsonc]": {
+        "editor.quickSuggestions": {
+          "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+      }
+    },
+    "commands": [
+      {
+        "command": "json.clearCache",
+        "title": "%json.command.clearCache%",
+        "category": "JSON"
+      },
+      {
+        "command": "json.sort",
+        "title": "%json.command.sort%",
+        "category": "JSON"
+      }
+    ]
+  }
+}
