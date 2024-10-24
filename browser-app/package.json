@@ -24,10 +24,20 @@
   "scripts": {
     "bundle": "yarn rebuild && theia build --mode development",
     "rebuild": "theia rebuild:browser --cacheRoot ..",
-    "start": "theia start --plugins=local-dir:../plugins",
+    "start": "THEIA_WEBVIEW_EXTERNAL_ENDPOINT={{hostname}} theia start --plugins=local-dir:../plugins",
     "watch": "yarn rebuild && theia build --watch --mode development"
   },
   "theia": {
-    "target": "browser"
+    "target": "browser",
+    "frontend": {
+      "config": {
+        "warnOnPotentiallyInsecureHostPattern": false
+      }
+    },
+    "backend": {
+      "config": {
+        "warnOnPotentiallyInsecureHostPattern": false
+      }
+    }
   }
 }

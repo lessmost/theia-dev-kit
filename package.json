@@ -6,7 +6,9 @@
   },
   "theiaPluginsDir": "plugins",
   "theiaPlugins": {
-    "builtin-extension-pack": "https://open-vsx.org/api/eclipse-theia/builtin-extension-pack/1.88.1/file/eclipse-theia.builtin-extension-pack-1.88.1.vsix"
+    "builtin-extension-pack": "https://open-vsx.org/api/eclipse-theia/builtin-extension-pack/1.88.1/file/eclipse-theia.builtin-extension-pack-1.88.1.vsix",
+    "ms-toolsai.jupyter": "https://open-vsx.org/api/ms-toolsai/jupyter/2024.8.1/file/ms-toolsai.jupyter-2024.8.1.vsix",
+    "ms-python.python": "https://open-vsx.org/api/ms-python/python/2024.16.1/file/ms-python.python-2024.16.1.vsix"
   },
   "scripts": {
     "download:plugins": "theia download:plugins",
