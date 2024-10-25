@@ -30,40 +30,21 @@
   },
   "type": 0,
   "contributes": {
-    "activationEvents": [
-      "onLanguage:sql"
-    ],
+    "activationEvents": ["onLanguage:sql"],
     "languages": [
       {
         "id": "sql",
-        "aliases": [
-          "SQL"
-        ],
-        "extensions": [
-          ".sql",
-          ".dsql"
-        ],
+        "aliases": ["SQL"],
+        "extensions": [".sql", ".dsql"],
         "configuration": {
           "brackets": [
-            [
-              "{",
-              "}"
-            ],
-            [
-              "[",
-              "]"
-            ],
-            [
-              "(",
-              ")"
-            ]
+            ["{", "}"],
+            ["[", "]"],
+            ["(", ")"]
           ],
           "comments": {
             "lineComment": "--",
-            "blockComment": [
-              "/*",
-              "*/"
-            ]
+            "blockComment": ["/*", "*/"]
           },
           "folding": {
             "offSide": true,
@@ -88,25 +69,17 @@
             {
               "open": "\"",
               "close": "\"",
-              "notIn": [
-                "string"
-              ]
+              "notIn": ["string"]
             },
             {
               "open": "N'",
               "close": "'",
-              "notIn": [
-                "string",
-                "comment"
-              ]
+              "notIn": ["string", "comment"]
             },
             {
               "open": "'",
               "close": "'",
-              "notIn": [
-                "string",
-                "comment"
-              ]
+              "notIn": ["string", "comment"]
             }
           ],
           "surroundingPairs": [

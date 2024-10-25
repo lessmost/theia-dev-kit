@@ -14,6 +14,10 @@ import VSCodeTypescript from "../../manifest/backend/vscode.typescript@1.88.1.js
 import VSCodePython from "../../manifest/backend/vscode.python@1.88.1.json";
 import VSCodeJsonLanguageFeatures from "../../manifest/frontend/vscode.json-language-features@1.88.1.json";
 import VSCodeTypescriptLanguageFeatures from "../../manifest/frontend/vscode.typescript-language-features@1.88.1.json";
+import VSCodeBuiltinNodebookRenderers from "../../manifest/backend/vscode.builtin-notebook-renderers@1.88.1.json";
+import VSCodeIpynb from "../../manifest/frontend/vscode.ipynb@1.88.1.json";
+import MSJupyterRenderers from "../../manifest/frontend/ms-toolsai.jupyter-renderers@1.0.19.json";
+import MSJupyter from "../../manifest/frontend/ms-toolsai.jupyter@2024.8.1.json";
 
 @injectable()
 export class FrontendHostedPluginServer
@@ -30,6 +34,11 @@ export class FrontendHostedPluginServer
       "vscode.python@1.88.1",
       "vscode.json-language-features@1.77.0",
       "vscode.typescript-language-features@1.88.1",
+
+      "vscode.builtin-notebook-renderers@1.88.1",
+      "vscode.ipynb@1.88.1",
+      "ms-toolsai.jupyter-renderers@1.0.19",
+      "ms-toolsai.jupyter@2024.8.1.json",
     ];
   }
 
@@ -51,6 +60,12 @@ export class FrontendHostedPluginServer
       VSCodePython as DeployedPlugin,
       VSCodeJsonLanguageFeatures as DeployedPlugin,
       VSCodeTypescriptLanguageFeatures as DeployedPlugin,
+
+      VSCodeBuiltinNodebookRenderers as DeployedPlugin,
+      // @ts-ignore types
+      VSCodeIpynb as DeployedPlugin,
+      MSJupyterRenderers as DeployedPlugin,
+      MSJupyter as DeployedPlugin,
     ];
   }
 

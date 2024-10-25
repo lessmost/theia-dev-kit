@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "host": "main",
+    "model": {
+      "packagePath": "/Users/zqlu/Sources/eclipse-theia/theia-dev-kit/plugins/ms-toolsai.vscode-jupyter-cell-tags/extension",
+      "packageUri": "file:///Users/zqlu/Sources/eclipse-theia/theia-dev-kit/plugins/ms-toolsai.vscode-jupyter-cell-tags/extension",
+      "id": "ms-toolsai.vscode-jupyter-cell-tags",
+      "name": "vscode-jupyter-cell-tags",
+      "publisher": "ms-toolsai",
+      "version": "0.1.9",
+      "displayName": "Jupyter Cell Tags",
+      "description": "Jupyter Cell Tags support for VS Code",
+      "engine": { "type": "vscode", "version": "^1.88.0" },
+      "entryPoint": {
+        "backend": "/Users/zqlu/Sources/eclipse-theia/theia-dev-kit/plugins/ms-toolsai.vscode-jupyter-cell-tags/extension/out/extension-node.js"
+      },
+      "iconUrl": "hostedPlugin/ms_toolsai_vscode_jupyter_cell_tags/icon.png",
+      "readmeUrl": "hostedPlugin/ms_toolsai_vscode_jupyter_cell_tags/.%2FREADME.md",
+      "licenseUrl": "hostedPlugin/ms_toolsai_vscode_jupyter_cell_tags/.%2FLICENSE"
+    },
+    "lifecycle": {
+      "startMethod": "activate",
+      "stopMethod": "deactivate",
+      "frontendModuleName": "ms_toolsai_vscode_jupyter_cell_tags",
+      "frontendInitPath": "plugin-vscode-init-fe.js",
+      "backendInitPath": "/Users/zqlu/Sources/eclipse-theia/theia-dev-kit/browser-app/lib/backend/plugin-vscode-init"
+    },
+    "outOfSync": false,
+    "isUnderDevelopment": false
+  },
+  "type": 0,
+  "contributes": {
+    "activationEvents": [
+      "onNotebook:jupyter-notebook",
+      "onCommand:jupyter-cell-tags.removeTag",
+      "onCommand:jupyter-cell-tags.addTag",
+      "onCommand:jupyter-cell-tags.editTagsInJSON",
+      "onCommand:jupyter-cell-tags.paramaterize",
+      "onView:cell-tag"
+    ],
+    "views": {
+      "jupyter-variables": [
+        {
+          "id": "cell-tag",
+          "name": "Cell Tags",
+          "when": "jupyter:showTagsExplorer && jupyter.hasNativeNotebookOrInteractiveWindowOpen",
+          "type": "tree"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "cell-tag",
+        "content": "No tags found for the selected cell. Use the [Add Cell Tag](command:jupyter-cell-tags.addTag) command to add tags.",
+        "order": 0
+      }
+    ],
+    "commands": [
+      {
+        "command": "jupyter-cell-tags.removeTag",
+        "title": "Remove Cell Tag",
+        "themeIcon": "$(close)"
+      },
+      {
+        "command": "jupyter-cell-tags.addTag",
+        "title": "Add Cell Tag",
+        "themeIcon": "$(add)"
+      },
+      {
+        "command": "jupyter-cell-tags.editTagsInJSON",
+        "title": "Edit Cell Tags (JSON)",
+        "themeIcon": "$(go-to-file)"
+      },
+      {
+        "command": "jupyter-cell-tags.paramaterize",
+        "title": "Mark Cell as Parameters"
+      }
+    ],
+    "menus": {
+      "notebook/cell/title": [
+        { "command": "jupyter-cell-tags.addTag", "group": "jupytercelltags@1" },
+        {
+          "command": "jupyter-cell-tags.editTagsInJSON",
+          "group": "jupytercelltags@2"
+        },
+        {
+          "command": "jupyter-cell-tags.paramaterize",
+          "group": "jupytercelltags@2"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "jupyter-cell-tags.addTag",
+          "group": "navigation",
+          "when": "view == cell-tag"
+        },
+        {
+          "command": "jupyter-cell-tags.editTagsInJSON",
+          "group": "navigation",
+          "when": "view == cell-tag"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "jupyter-cell-tags.removeTag",
+          "group": "inline",
+          "when": "view == cell-tag"
+        }
+      ]
+    }
+  }
+}

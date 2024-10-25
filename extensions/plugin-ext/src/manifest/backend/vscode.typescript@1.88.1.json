@@ -51,41 +51,18 @@
     "languages": [
       {
         "id": "typescript",
-        "aliases": [
-          "TypeScript",
-          "ts",
-          "typescript"
-        ],
-        "extensions": [
-          ".ts",
-          ".cts",
-          ".mts"
-        ],
+        "aliases": ["TypeScript", "ts", "typescript"],
+        "extensions": [".ts", ".cts", ".mts"],
         "configuration": {
           "brackets": [
-            [
-              "${",
-              "}"
-            ],
-            [
-              "{",
-              "}"
-            ],
-            [
-              "[",
-              "]"
-            ],
-            [
-              "(",
-              ")"
-            ]
+            ["${", "}"],
+            ["{", "}"],
+            ["[", "]"],
+            ["(", ")"]
           ],
           "comments": {
             "lineComment": "//",
-            "blockComment": [
-              "/*",
-              "*/"
-            ]
+            "blockComment": ["/*", "*/"]
           },
           "folding": {
             "markers": {
@@ -112,32 +89,22 @@
             {
               "open": "'",
               "close": "'",
-              "notIn": [
-                "string",
-                "comment"
-              ]
+              "notIn": ["string", "comment"]
             },
             {
               "open": "\"",
               "close": "\"",
-              "notIn": [
-                "string"
-              ]
+              "notIn": ["string"]
             },
             {
               "open": "`",
               "close": "`",
-              "notIn": [
-                "string",
-                "comment"
-              ]
+              "notIn": ["string", "comment"]
             },
             {
               "open": "/**",
               "close": " */",
-              "notIn": [
-                "string"
-              ]
+              "notIn": ["string"]
             }
           ],
           "indentationRules": {
@@ -283,39 +250,18 @@
       },
       {
         "id": "typescriptreact",
-        "aliases": [
-          "TypeScript JSX",
-          "TypeScript React",
-          "tsx"
-        ],
-        "extensions": [
-          ".tsx"
-        ],
+        "aliases": ["TypeScript JSX", "TypeScript React", "tsx"],
+        "extensions": [".tsx"],
         "configuration": {
           "brackets": [
-            [
-              "${",
-              "}"
-            ],
-            [
-              "{",
-              "}"
-            ],
-            [
-              "[",
-              "]"
-            ],
-            [
-              "(",
-              ")"
-            ]
+            ["${", "}"],
+            ["{", "}"],
+            ["[", "]"],
+            ["(", ")"]
           ],
           "comments": {
             "lineComment": "//",
-            "blockComment": [
-              "/*",
-              "*/"
-            ]
+            "blockComment": ["/*", "*/"]
           },
           "folding": {
             "markers": {
@@ -342,32 +288,22 @@
             {
               "open": "'",
               "close": "'",
-              "notIn": [
-                "string",
-                "comment"
-              ]
+              "notIn": ["string", "comment"]
             },
             {
               "open": "\"",
               "close": "\"",
-              "notIn": [
-                "string"
-              ]
+              "notIn": ["string"]
             },
             {
               "open": "`",
               "close": "`",
-              "notIn": [
-                "string",
-                "comment"
-              ]
+              "notIn": ["string", "comment"]
             },
             {
               "open": "/**",
               "close": " */",
-              "notIn": [
-                "string"
-              ]
+              "notIn": ["string"]
             }
           ],
           "indentationRules": {
@@ -519,16 +455,11 @@
           "tsconfig-*.json",
           "jsconfig-*.json"
         ],
-        "filenames": [
-          "tsconfig.json",
-          "jsconfig.json"
-        ]
+        "filenames": ["tsconfig.json", "jsconfig.json"]
       },
       {
         "id": "json",
-        "extensions": [
-          ".tsbuildinfo"
-        ]
+        "extensions": [".tsbuildinfo"]
       }
     ],
     "grammars": [
@@ -12327,10 +12258,7 @@
           "scopeName": "documentation.injection.ts"
         },
         "grammarLocation": "./syntaxes/jsdoc.ts.injection.tmLanguage.json",
-        "injectTo": [
-          "source.ts",
-          "source.tsx"
-        ]
+        "injectTo": ["source.ts", "source.tsx"]
       },
       {
         "scope": "documentation.injection.js.jsx",
@@ -12356,10 +12284,7 @@
           "scopeName": "documentation.injection.js.jsx"
         },
         "grammarLocation": "./syntaxes/jsdoc.js.injection.tmLanguage.json",
-        "injectTo": [
-          "source.js",
-          "source.js.jsx"
-        ]
+        "injectTo": ["source.js", "source.js.jsx"]
       }
     ]
   }

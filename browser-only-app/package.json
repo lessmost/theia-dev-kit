@@ -17,6 +17,7 @@
     "@theia/terminal": "latest",
     "@theia/workspace": "latest",
     "@theia/userstorage": "latest",
+    "core": "0.0.0",
     "terminal": "0.0.0",
     "plugin-ext": "0.0.0",
     "hello-world": "0.0.0"
@@ -32,12 +33,24 @@
     "copy-plugins:vscode.python": "mkdir -p lib/frontend/hostedPlugin/vscode_python && cp -r ../plugins/vscode.python/extension/* lib/frontend/hostedPlugin/vscode_python/",
     "copy-plugins:vscode.json-language-features": "mkdir -p lib/frontend/hostedPlugin/vscode_json_language_features && cp -r ../plugins/vscode.json-language-features/extension/* lib/frontend/hostedPlugin/vscode_json_language_features/",
     "copy-plugins:vscode.typescript-language-features": "mkdir -p lib/frontend/hostedPlugin/vscode_typescript_language_features && cp -r ../plugins/vscode.typescript-language-features/extension/* lib/frontend/hostedPlugin/vscode_typescript_language_features",
+    "copy-plugins:vscode.builtin-notebook-renderers": "mkdir -p lib/frontend/hostedPlugin/vscode_builtin_notebook_renderers && cp -r ../plugins/vscode.builtin-notebook-renderers/extension/* lib/frontend/hostedPlugin/vscode_builtin_notebook_renderers/",
+    "copy-plugins:vscode.ipynb": "mkdir -p lib/frontend/hostedPlugin/vscode_ipynb && cp -r ../plugins/vscode.ipynb/extension/* lib/frontend/hostedPlugin/vscode_ipynb/",
+    "copy-plugins:ms-toolsai.jupyter-renderers": "mkdir -p lib/frontend/hostedPlugin/ms_toolsai_jupyter_renderers && cp -r ../plugins/ms-toolsai.jupyter-renderers/extension/* lib/frontend/hostedPlugin/ms_toolsai_jupyter_renderers/",
+    "copy-plugins:ms-toolsai.jupyter": "mkdir -p lib/frontend/hostedPlugin/ms_toolsai_jupyter && cp -r ../plugins/ms-toolsai.jupyter/extension/* lib/frontend/hostedPlugin/ms_toolsai_jupyter/",
     "bundle": "yarn rebuild && theia build --mode development && yarn copy-plugins",
     "rebuild": "theia rebuild:browser --cacheRoot ..",
     "start": "theia start --plugins=local-dir:../plugins",
     "watch": "yarn rebuild && theia build --watch --mode development"
   },
   "theia": {
-    "target": "browser-only"
+    "target": "browser-only",
+    "frontend": {
+      "config": {
+        "warnOnPotentiallyInsecureHostPattern": false,
+        "preferences": {
+          "security.workspace.trust.enabled": false
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "host": "main",
+    "model": {
+      "packagePath": "/Users/zqlu/Sources/eclipse-theia/theia-dev-kit/plugins/vscode.ipynb/extension",
+      "packageUri": "file:///Users/zqlu/Sources/eclipse-theia/theia-dev-kit/plugins/vscode.ipynb/extension",
+      "id": "vscode.ipynb",
+      "name": "ipynb",
+      "publisher": "vscode",
+      "version": "1.88.1",
+      "displayName": ".ipynb Support (built-in)",
+      "description": "Provides basic support for opening and reading Jupyter's .ipynb notebook files",
+      "engine": { "type": "vscode", "version": "^1.57.0" },
+      "entryPoint": {
+        "frontend": "dist/browser/ipynbMain.js"
+      },
+      "iconUrl": "hostedPlugin/vscode_ipynb/media%2Ficon.png",
+      "readmeUrl": "hostedPlugin/vscode_ipynb/.%2FREADME.md",
+      "licenseUrl": "hostedPlugin/vscode_ipynb/.%2FLICENSE"
+    },
+    "lifecycle": {
+      "startMethod": "activate",
+      "stopMethod": "deactivate",
+      "frontendModuleName": "vscode_ipynb",
+      "frontendInitPath": "plugin-vscode-init-fe.js",
+      "backendInitPath": "/Users/zqlu/Sources/eclipse-theia/theia-dev-kit/browser-app/lib/backend/plugin-vscode-init"
+    },
+    "outOfSync": false,
+    "isUnderDevelopment": false
+  },
+  "type": 0,
+  "contributes": {
+    "activationEvents": [
+      "onNotebook:jupyter-notebook",
+      "onNotebookSerializer:interactive",
+      "onCommand:ipynb.newUntitledIpynb",
+      "onCommand:ipynb.openIpynbInNotebookEditor",
+      "onCommand:ipynb.cleanInvalidImageAttachment",
+      "onCommand:notebook.cellOutput.copy",
+      "onNotebookSerializer:jupyter-notebook"
+    ],
+    "configuration": [
+      {
+        "properties": {
+          "ipynb.pasteImagesAsAttachments.enabled": {
+            "type": "boolean",
+            "scope": "resource",
+            "markdownDescription": "%ipynb.pasteImagesAsAttachments.enabled%",
+            "default": true
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "ipynb.newUntitledIpynb",
+        "title": "%newUntitledIpynb.title%",
+        "shortTitle": "%newUntitledIpynb.shortTitle%",
+        "category": "Create"
+      },
+      {
+        "command": "ipynb.openIpynbInNotebookEditor",
+        "title": "%openIpynbInNotebookEditor.title%"
+      },
+      {
+        "command": "ipynb.cleanInvalidImageAttachment",
+        "title": "%cleanInvalidImageAttachment.title%"
+      },
+      {
+        "command": "notebook.cellOutput.copy",
+        "title": "%copyCellOutput.title%",
+        "category": "Notebook"
+      }
+    ],
+    "menus": {
+      "file/newFile": [
+        { "command": "ipynb.newUntitledIpynb", "group": "notebook" }
+      ],
+      "commandPalette": [
+        { "command": "ipynb.newUntitledIpynb" },
+        { "command": "ipynb.openIpynbInNotebookEditor", "when": "false" },
+        { "command": "ipynb.cleanInvalidImageAttachment", "when": "false" },
+        {
+          "command": "notebook.cellOutput.copy",
+          "when": "notebookCellHasOutputs"
+        }
+      ],
+      "webview/context": [
+        {
+          "command": "notebook.cellOutput.copy",
+          "when": "webviewId == 'notebook.output' && webviewSection == 'image'"
+        }
+      ]
+    },
+    "notebooks": [
+      {
+        "type": "jupyter-notebook",
+        "displayName": "Jupyter Notebook",
+        "selector": [{ "filenamePattern": "*.ipynb" }],
+        "priority": "default"
+      }
+    ],
+    "notebookRenderer": [
+      {
+        "id": "vscode.markdown-it-cell-attachment-renderer",
+        "displayName": "%markdownAttachmentRenderer.displayName%",
+        "entrypoint": {
+          "extends": "vscode.markdown-it-renderer",
+          "path": "./notebook-out/cellAttachmentRenderer.js"
+        }
+      }
+    ]
+  }
+}

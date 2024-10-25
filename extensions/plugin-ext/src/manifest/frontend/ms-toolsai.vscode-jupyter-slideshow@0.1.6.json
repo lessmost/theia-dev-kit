@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "host": "main",
+    "model": {
+      "packagePath": "/Users/zqlu/Sources/eclipse-theia/theia-dev-kit/plugins/ms-toolsai.vscode-jupyter-slideshow/extension",
+      "packageUri": "file:///Users/zqlu/Sources/eclipse-theia/theia-dev-kit/plugins/ms-toolsai.vscode-jupyter-slideshow/extension",
+      "id": "ms-toolsai.vscode-jupyter-slideshow",
+      "name": "vscode-jupyter-slideshow",
+      "publisher": "ms-toolsai",
+      "version": "0.1.6",
+      "displayName": "Jupyter Slide Show",
+      "description": "Jupyter Slide Show support for VS Code",
+      "engine": { "type": "vscode", "version": "^1.88.0" },
+      "entryPoint": {
+        "backend": "/Users/zqlu/Sources/eclipse-theia/theia-dev-kit/plugins/ms-toolsai.vscode-jupyter-slideshow/extension/out/extension-node.js"
+      },
+      "iconUrl": "hostedPlugin/ms_toolsai_vscode_jupyter_slideshow/icon.png",
+      "readmeUrl": "hostedPlugin/ms_toolsai_vscode_jupyter_slideshow/.%2FREADME.md",
+      "licenseUrl": "hostedPlugin/ms_toolsai_vscode_jupyter_slideshow/.%2FLICENSE"
+    },
+    "lifecycle": {
+      "startMethod": "activate",
+      "stopMethod": "deactivate",
+      "frontendModuleName": "ms_toolsai_vscode_jupyter_slideshow",
+      "frontendInitPath": "plugin-vscode-init-fe.js",
+      "backendInitPath": "/Users/zqlu/Sources/eclipse-theia/theia-dev-kit/browser-app/lib/backend/plugin-vscode-init"
+    },
+    "outOfSync": false,
+    "isUnderDevelopment": false
+  },
+  "type": 0,
+  "contributes": {
+    "activationEvents": [
+      "onNotebook:jupyter-notebook",
+      "onCommand:jupyter-slideshow.switchSlideType",
+      "onCommand:jupyter-slideshow.editSlideShowInJSON"
+    ],
+    "commands": [
+      {
+        "command": "jupyter-slideshow.switchSlideType",
+        "title": "Switch Slide Type"
+      },
+      {
+        "command": "jupyter-slideshow.editSlideShowInJSON",
+        "title": "Edit Slide Type (JSON)",
+        "themeIcon": "$(go-to-file)"
+      }
+    ],
+    "menus": {
+      "notebook/cell/title": [
+        {
+          "command": "jupyter-slideshow.switchSlideType",
+          "group": "jupyter-slideshow@1"
+        },
+        {
+          "command": "jupyter-slideshow.editSlideShowInJSON",
+          "group": "jupyter-slideshow@2"
+        }
+      ]
+    }
+  }
+}

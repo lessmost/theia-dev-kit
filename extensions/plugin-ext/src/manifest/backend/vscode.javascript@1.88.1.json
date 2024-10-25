@@ -55,39 +55,18 @@
     "languages": [
       {
         "id": "javascriptreact",
-        "aliases": [
-          "JavaScript JSX",
-          "JavaScript React",
-          "jsx"
-        ],
-        "extensions": [
-          ".jsx"
-        ],
+        "aliases": ["JavaScript JSX", "JavaScript React", "jsx"],
+        "extensions": [".jsx"],
         "configuration": {
           "brackets": [
-            [
-              "${",
-              "}"
-            ],
-            [
-              "{",
-              "}"
-            ],
-            [
-              "[",
-              "]"
-            ],
-            [
-              "(",
-              ")"
-            ]
+            ["${", "}"],
+            ["{", "}"],
+            ["[", "]"],
+            ["(", ")"]
           ],
           "comments": {
             "lineComment": "//",
-            "blockComment": [
-              "/*",
-              "*/"
-            ]
+            "blockComment": ["/*", "*/"]
           },
           "folding": {
             "markers": {
@@ -114,32 +93,22 @@
             {
               "open": "'",
               "close": "'",
-              "notIn": [
-                "string",
-                "comment"
-              ]
+              "notIn": ["string", "comment"]
             },
             {
               "open": "\"",
               "close": "\"",
-              "notIn": [
-                "string"
-              ]
+              "notIn": ["string"]
             },
             {
               "open": "`",
               "close": "`",
-              "notIn": [
-                "string",
-                "comment"
-              ]
+              "notIn": ["string", "comment"]
             },
             {
               "open": "/**",
               "close": " */",
-              "notIn": [
-                "string"
-              ]
+              "notIn": ["string"]
             }
           ],
           "indentationRules": {
@@ -258,50 +227,21 @@
       },
       {
         "id": "javascript",
-        "aliases": [
-          "JavaScript",
-          "javascript",
-          "js"
-        ],
-        "extensions": [
-          ".js",
-          ".es6",
-          ".mjs",
-          ".cjs",
-          ".pac"
-        ],
-        "filenames": [
-          "jakefile"
-        ],
+        "aliases": ["JavaScript", "javascript", "js"],
+        "extensions": [".js", ".es6", ".mjs", ".cjs", ".pac"],
+        "filenames": ["jakefile"],
         "firstLine": "^#!.*\\bnode",
-        "mimetypes": [
-          "text/javascript"
-        ],
+        "mimetypes": ["text/javascript"],
         "configuration": {
           "brackets": [
-            [
-              "${",
-              "}"
-            ],
-            [
-              "{",
-              "}"
-            ],
-            [
-              "[",
-              "]"
-            ],
-            [
-              "(",
-              ")"
-            ]
+            ["${", "}"],
+            ["{", "}"],
+            ["[", "]"],
+            ["(", ")"]
           ],
           "comments": {
             "lineComment": "//",
-            "blockComment": [
-              "/*",
-              "*/"
-            ]
+            "blockComment": ["/*", "*/"]
           },
           "folding": {
             "markers": {
@@ -328,32 +268,22 @@
             {
               "open": "'",
               "close": "'",
-              "notIn": [
-                "string",
-                "comment"
-              ]
+              "notIn": ["string", "comment"]
             },
             {
               "open": "\"",
               "close": "\"",
-              "notIn": [
-                "string"
-              ]
+              "notIn": ["string"]
             },
             {
               "open": "`",
               "close": "`",
-              "notIn": [
-                "string",
-                "comment"
-              ]
+              "notIn": ["string", "comment"]
             },
             {
               "open": "/**",
               "close": " */",
-              "notIn": [
-                "string"
-              ]
+              "notIn": ["string"]
             }
           ],
           "indentationRules": {
@@ -475,28 +405,13 @@
         "aliases": [],
         "configuration": {
           "brackets": [
-            [
-              "{",
-              "}"
-            ],
-            [
-              "[",
-              "]"
-            ],
-            [
-              "(",
-              ")"
-            ],
-            [
-              "<",
-              ">"
-            ]
+            ["{", "}"],
+            ["[", "]"],
+            ["(", ")"],
+            ["<", ">"]
           ],
           "comments": {
-            "blockComment": [
-              "{/*",
-              "*/}"
-            ]
+            "blockComment": ["{/*", "*/}"]
           },
           "wordPattern": {
             "pattern": "(-?\\d*\\.\\d\\w*)|([^\\`\\~\\!\\@\\$\\^\\&\\*\\(\\)\\=\\+\\[\\{\\]\\}\\\\\\|\\;\\:'\"\\,\\.\\<\\>\\/\\s]+)"
@@ -517,24 +432,17 @@
             {
               "open": "'",
               "close": "'",
-              "notIn": [
-                "string",
-                "comment"
-              ]
+              "notIn": ["string", "comment"]
             },
             {
               "open": "\"",
               "close": "\"",
-              "notIn": [
-                "string"
-              ]
+              "notIn": ["string"]
             },
             {
               "open": "/**",
               "close": " */",
-              "notIn": [
-                "string"
-              ]
+              "notIn": ["string"]
             }
           ],
           "surroundingPairs": [
